@@ -21,6 +21,3 @@ class Game {
         return phrases;
     };
 }
-
-
-
