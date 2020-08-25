@@ -15,9 +15,26 @@ class Game {
 
    // Creates phrases for use in game
     createPhrases() {
-        let phrases = ['Hello little girl','Kato did it','Is this dress small or am I fat','tiggle bitty','I declare bankruptcy'];
+        let phrases = ['Hello little girl',
+                        'Kato did it',
+                        'Is this dress small or am I fat',
+                        'tiggle bitty',
+                        'I declare bankruptcy'];
 
-        phrases = phrases.map((str) => (new Phrase(str)));
-        return phrases;
+        return phrases.map(phrase => new Phrase(phrase));
+        
+    };
+
+        /**
+    * Selects random phrase from phrases property
+    * @return {Object} Phrase object chosen to be used
+    */
+    getRandomPhrase() {
+        
+        //Randomize the selected phrase using math.Mathrandom and .length 
+        let randomizePhrase = Math.floor(Math.random() * this.createPhrases().length);
+        let phrase = this.phrases[randomizePhrase];
+        
+        return phrase;
     };
 }
