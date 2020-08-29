@@ -4,6 +4,14 @@
 
 //  Temp code to test class instances of phrase and game
 
+let game;
+let startBtn = document.getElementById('btn__reset');
 
-const game = new Game();
-game.getRandomPhrase().addPhraseToDisplay();
+
+
+startBtn.addEventListener('click', function()  {
+    game = new Game();
+    game.startGame();
+
+    
+});

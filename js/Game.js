@@ -37,4 +37,32 @@ class Game {
         
         return phrase;
     };
+
+
+
+
+
+    startGame() {
+        // hide the start overlay div
+        let bgOverlay = document.querySelector('#overlay');
+        bgOverlay.style.display = 'none';
+
+
+        // call getRandomPhrase() to select a phrase
+       let randomPhrase = this.getRandomPhrase();
+       
+
+
+        //call addPhraseToDisplay and store the phrase in the activePhrase property
+        this.activePhrase = randomPhrase;
+        this.activePhrase.addPhraseToDisplay();
+           
+    }
+
+
+
+
+
+
+
 }
