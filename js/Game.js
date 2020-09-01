@@ -39,9 +39,6 @@ class Game {
     };
 
 
-
-
-
     startGame() {
         // hide the start overlay div
         let bgOverlay = document.querySelector('#overlay');

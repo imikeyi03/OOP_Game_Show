@@ -34,9 +34,12 @@
                 ul.appendChild(li);
             }
 
-
-
         });
+    }
+
+    // returns true or false depending on if the letter is found in the phrase
+    checkletter(letter) {
+        return this.phrase.includes(letter);
     }
 
 }
