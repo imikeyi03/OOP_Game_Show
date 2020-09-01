@@ -42,5 +42,18 @@
         return this.phrase.includes(letter);
     }
 
+    // reveal matching letter on the board that the user entered
+    showMatchedLetter(letter) {
+        
+        let allLetters = document.getElementsByClassName('letter');
+        
+        // When a letter in the phrase is matched, display that letter on page
+        for(let i = 0; i < allLetters.length; i++) {
+            if(allLetters[i].classList.contains(`${letter}`)) {
+                allLetters[i].className = `show letter ${letter}`;
+                allLetters[i].textContent = `${letter}`;
+            }
+        }
+    }
+
 }
- 

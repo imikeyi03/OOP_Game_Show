@@ -57,6 +57,46 @@ class Game {
     }
 
 
+    /**
+    * Checks for winning move
+    * @return {boolean} True if game has been won, false if game wasn't
+    won
+    */
+
+    checkForWin() {
+        //A user wins when all letters have been shown
+        let unseenLetters = document.getElementsByClassName('hide');
+
+        if (unseenLetters.length === 0) {
+            alert('You Won!');
+            return true;
+        } else {
+            return false;
+        }
+
+    };
+    /**
+    
+    * Checks if player has remaining lives and ends game if player is out
+    */
+    removeLife() {
+        // Increases the value of the missed property
+        this.missed++;
+
+        // Removes a full heart from the scoreboard
+        const tally = document.querySelector("ol");
+        let healthPointList = document.querySelector('.tries');
+        let healthPoint = document.querySelector('.tries img');
+        healthPoint.src = "images/lostHeart.png";
+
+        
+    };
+
+
+   
+
+
+
 
 
 
