@@ -88,12 +88,33 @@ class Game {
         
         // Increases the value of the missed property
         this.missed++;
-
-        
     };
 
+    // `gameOver()`: This method displays the original start screen overlay, and
+    // depending on the outcome of the game, updates the overlay `h1` element with a
+    // friendly win or loss message, and replaces the overlay’s `start` CSS class with
+    // either the `win` or `lose` CSS class.
 
-   
+
+   gameOver() {
+    let bgOverlay = document.querySelector('#overlay');
+    let bgColor = document.querySelector('.start');
+    let headingMessage = document.querySelector('#game-over-message');
+    
+    //Show start overlay again
+    bgOverlay.style.display = 'flex';
+
+    // Change bgcolor based on win or lose
+    if(this.checkForWin === true) {
+        bgColor.className = 'win';
+        headingMessage.innerText = "Congrats!";
+    } else {
+        bgColor.className = 'lose';
+        headingMessage.innerText = "Bummer...";
+    }
+
+    
+   }
 
 
 
