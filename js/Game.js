@@ -80,14 +80,14 @@ class Game {
     * Checks if player has remaining lives and ends game if player is out
     */
     removeLife() {
+        //Selects all heart images in the DOM
+        const healthPoints = document.querySelectorAll('img');
+        
+        //A heart is selected and changed to a 'lostHeart' based on the missed property index value
+        healthPoints[this.missed].src = "images/lostHeart.png";
+        
         // Increases the value of the missed property
         this.missed++;
-
-        // Removes a full heart from the scoreboard
-        const tally = document.querySelector("ol");
-        let healthPointList = document.querySelector('.tries');
-        let healthPoint = document.querySelector('.tries img');
-        healthPoint.src = "images/lostHeart.png";
 
         
     };
