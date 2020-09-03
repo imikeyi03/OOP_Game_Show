@@ -105,7 +105,7 @@ class Game {
     bgOverlay.style.display = 'flex';
 
     // Change bgcolor based on win or lose
-    if(this.checkForWin === true) {
+    if(this.checkForWin() === true) {
         bgColor.className = 'win';
         headingMessage.innerText = "Congrats!";
     } else {
