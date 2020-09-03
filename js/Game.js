@@ -68,7 +68,6 @@ class Game {
         let unseenLetters = document.getElementsByClassName('hide');
 
         if (unseenLetters.length === 0) {
-            alert('You Won!');
             return true;
         } else {
             return false;
@@ -115,6 +114,15 @@ class Game {
 
     
    }
+   
+
+    /**
+    * Handles onscreen keyboard button clicks
+    * @param (HTMLButtonElement) button - The clicked button element
+    */
+    handleInteraction(button) {
+        console.log(button);
+    };
 
 
 
