@@ -74,6 +74,8 @@ class Game {
         }
 
     };
+
+
     /**
     
     * Checks if player has remaining lives and ends game if player is out
@@ -114,14 +116,21 @@ class Game {
 
     
    }
-   
+
 
     /**
     * Handles onscreen keyboard button clicks
     * @param (HTMLButtonElement) button - The clicked button element
     */
-    handleInteraction(button) {
-        console.log(button);
+    handleInteraction(selection) {
+
+        selection.disabled = true;
+
+        if(this.activePhrase.checkLetter(selection) === true) {
+            console.log('passed');
+        } else {
+            console.log('failed');
+        }
     };
 
 

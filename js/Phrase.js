@@ -38,7 +38,7 @@
     }
 
     // returns true or false depending on if the letter is found in the phrase
-    checkletter(letter) {
+    checkLetter(letter) {
         return this.phrase.includes(letter);
     }
 
