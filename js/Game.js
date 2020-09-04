@@ -40,6 +40,8 @@ class Game {
 
 
     startGame() {
+
+        this.resetSession();
         // hide the start overlay div
         let bgOverlay = document.querySelector('#overlay');
         bgOverlay.style.display = 'none';
@@ -67,7 +69,7 @@ class Game {
         //A user wins when all letters have been shown
         let unseenLetters = document.getElementsByClassName('hide');
 
-        if (unseenLetters.length == 0) {
+        if (unseenLetters.length === 0) {
             return true;
         } else {
             return false;
@@ -99,7 +101,6 @@ class Game {
 
    gameOver() {
     let bgOverlay = document.querySelector('#overlay');
-    let bgColor = document.querySelector('.start');
     let headingMessage = document.querySelector('#game-over-message');
     
     //Show start overlay again
@@ -107,10 +108,10 @@ class Game {
 
     // Change bgcolor based on win or lose
     if(this.checkForWin() === true) {
-        bgColor.className = 'win';
+        bgOverlay.className = 'win';
         headingMessage.innerHTML = "You Won!";
     } else {
-        bgColor.className = 'lose';
+        bgOverlay.className = 'lose';
         headingMessage.innerHTML = "Bummer... better luck next time.";
     }
 

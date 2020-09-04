@@ -11,7 +11,6 @@ let interactionButtons = document.querySelector('#qwerty');
 
 startBtn.addEventListener('click', function()  {
     game = new Game();
-    game.resetSession();
     game.startGame();
     
 });
