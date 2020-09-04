@@ -8,6 +8,6 @@ Guess the entire phrase without guessing 5 wrong letters!
 This unit helped me to develop my skills using OOP JavaScript. I focused mainly on truly understanding JS classes using constructors and class methods, DOM manipulation, and harnessing the power of the 'this' object keyword.
 
 Technology Used
--HTML5
--CSS3
--Vanilla JavaScript
+- HTML5
+- CSS3
+- Vanilla JavaScript
