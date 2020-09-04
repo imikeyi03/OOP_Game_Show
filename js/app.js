@@ -4,6 +4,7 @@
 
 
  //  Global Variables
+
 let startBtn = document.getElementById('btn__reset');
 let interactionButtons = document.querySelector('#qwerty');
 
@@ -12,6 +13,7 @@ startBtn.addEventListener('click', function()  {
     game = new Game();
     game.resetSession();
     game.startGame();
+    
 });
 
 

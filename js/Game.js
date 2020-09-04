@@ -111,10 +111,10 @@ class Game {
         headingMessage.innerHTML = "You Won!";
     } else {
         bgColor.className = 'lose';
-        headingMessage.innerText = "Bummer... better luck next time.";
-        headingMessage.outerHTML = `<p>The correct answer was: ${this.activePhrase.phrase}</p>`;
+        headingMessage.innerHTML = "Bummer... better luck next time.";
     }
 
+    
     
    }
 
