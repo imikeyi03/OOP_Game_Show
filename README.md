@@ -1,6 +1,8 @@
 # OOP_Game_Show - Phrase Hunter
 Unit 4 for Treehouse Tech Degree
 
+![app screenshot](images/screenshot.png)
+
 ## Game Objective
 Guess the entire phrase without guessing 5 wrong letters!
 
