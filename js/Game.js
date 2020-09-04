@@ -17,8 +17,8 @@ class Game {
     createPhrases() {
         let phrases = ['Hello little girl',
                         'Kato did it',
-                        'Is this dress small or am I fat',
-                        'tiggle bitty',
+                        'So your saying theres a chance',
+                        'Thanks ipcus',
                         'I declare bankruptcy'];
 
         return phrases.map(phrase => new Phrase(phrase));
@@ -40,6 +40,9 @@ class Game {
 
 
     startGame() {
+
+        this.resetSession();
+
         // hide the start overlay div
         let bgOverlay = document.querySelector('#overlay');
         bgOverlay.style.display = 'none';
@@ -108,10 +111,11 @@ class Game {
     // Change bgcolor based on win or lose
     if(this.checkForWin() === true) {
         bgColor.className = 'win';
-        headingMessage.innerText = "Congrats!";
+        headingMessage.innerText = "You Won!";
     } else {
         bgColor.className = 'lose';
-        headingMessage.innerText = "Bummer...";
+        headingMessage.innerText = "Bummer... better luck next time.";
+        headingMessage.outerHTML = `<p>The correct answer was: ${this.activePhrase.phrase}</p>`;
     }
 
     
@@ -148,10 +152,26 @@ class Game {
     };
 
 
+    // Resets all hearts, buttons, and resets phrase 
 
+    resetSession() {
+        const phraseList = document.querySelector('#phrase ul').innerHTML = '';
+        this.missed = 0;
 
+        let letterButtons = document.getElementsByTagName('button');
+        for (let i = 0; i < letterButtons.length; i++) {
+           letterButtons[i].className = 'key';
+           letterButtons[i].disabled = false;
+           
+       }
 
-
-
+       const healthPoints = document.querySelectorAll('img');
+        
+       //All hearts is selected and changed to a 'liveHeart' based on the reset missed property index value
+      for (let i = 0; i < healthPoints.length; i++) {
+          healthPoints[i].src = "images/liveHeart.png"
+          
+      }
+    }
 
 }
