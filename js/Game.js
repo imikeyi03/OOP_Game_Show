@@ -126,10 +126,24 @@ class Game {
 
         selection.disabled = true;
 
-        if(this.activePhrase.checkLetter(selection) === true) {
+        if(this.activePhrase.checkLetter(selection.innerHTML) === true) {
             console.log('passed');
+            selection.classList.add('chosen');
+            this.activePhrase.showMatchedLetter(selection.innerHTML);
+            this.checkForWin();
+
+            if(this.checkForWin() === true) {
+                this.gameOver();
+            }
+
         } else {
             console.log('failed');
+            selection.classList.add('wrong');
+            this.removeLife();
+
+            if(this.missed === 5) {
+                this.gameOver();
+            }
         }
     };
 
