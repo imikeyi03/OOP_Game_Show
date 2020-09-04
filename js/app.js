@@ -10,7 +10,8 @@ let interactionButtons = document.querySelector('#qwerty');
 
 startBtn.addEventListener('click', function()  {
     game = new Game();
-    game.startGame(); 
+    game.resetSession();
+    game.startGame();
 });
 
 

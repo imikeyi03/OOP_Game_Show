@@ -40,9 +40,6 @@ class Game {
 
 
     startGame() {
-
-        this.resetSession();
-
         // hide the start overlay div
         let bgOverlay = document.querySelector('#overlay');
         bgOverlay.style.display = 'none';
@@ -70,7 +67,7 @@ class Game {
         //A user wins when all letters have been shown
         let unseenLetters = document.getElementsByClassName('hide');
 
-        if (unseenLetters.length === 0) {
+        if (unseenLetters.length == 0) {
             return true;
         } else {
             return false;
@@ -111,7 +108,7 @@ class Game {
     // Change bgcolor based on win or lose
     if(this.checkForWin() === true) {
         bgColor.className = 'win';
-        headingMessage.innerText = "You Won!";
+        headingMessage.innerHTML = "You Won!";
     } else {
         bgColor.className = 'lose';
         headingMessage.innerText = "Bummer... better luck next time.";
@@ -155,7 +152,11 @@ class Game {
     // Resets all hearts, buttons, and resets phrase 
 
     resetSession() {
-        const phraseList = document.querySelector('#phrase ul').innerHTML = '';
+        const phraseList = document.querySelector('#phrase ul')
+        let bgColor = document.getElementById('overlay');
+        bgColor.className = 'start';
+
+        phraseList.innerHTML = '';
         this.missed = 0;
 
         let letterButtons = document.getElementsByTagName('button');
